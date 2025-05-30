@@ -29,7 +29,7 @@ def restart_space():
 4. Modify `DIBT-Russian/MPEP_Dashbaord` to point to your Hugging Face Space using the syntax `{{USER OR ORGANIZATION}}/{{SPACE}}`.
 5. In the Repository Menu, follow the path `Settings > Secrets and keys > Actions`.
 6. On the Secrets tab, click New repository secret.
-7. Create a new repository secret called `HF_KEY`.
+7. Create a new repository secret called `HF_TOKEN`.
 8. Provide a [Hugging Face token](https://huggingface.co/settings/tokens) with `write` access from the account which owns the target Space.
 9. Navigate to `/.github/workflows/restart_hf_space.yaml`.
 10. Refer to `cron` schedule: `*/30 * * * *` and update it to your desired value. Please note, inducing rebuild too frequently can result in errored builds caused by compute throttling from Hugging Face. On a free-tier Gradio Space, schedule `*/10 * * * *` proved to be too frequent and hanging builds were observed.
